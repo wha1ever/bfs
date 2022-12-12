@@ -46,7 +46,7 @@ func put(w http.ResponseWriter, r *http.Request) {
 }
 
 func get(w http.ResponseWriter, r *http.Request) {
-	f, err := os.Open(os.Getenv("STORAGE_ROOT") + "objects/" + strings.Split(r.URL.EscapedPath(), "/")[2])
+	f, err := os.Open(os.Getenv("STORAGE_ROOT") + "/objects/" + strings.Split(r.URL.EscapedPath(), "/")[2])
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
