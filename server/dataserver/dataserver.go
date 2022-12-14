@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/wha1ever/bfs/server/dataserver/heartbeat"
 	"github.com/wha1ever/bfs/server/dataserver/locate"
-	"github.com/wha1ever/bfs/server/dataserver/objects"
+	"github.com/wha1ever/bfs/server/dataserver/object"
 	"log"
 	"net/http"
 	"os"
@@ -21,6 +21,6 @@ func main() {
 			log.Println(err)
 		}
 	}()
-	http.HandleFunc("/objects/", objects.Handler)
+	http.HandleFunc("/object/", object.Handler)
 	log.Fatal(http.ListenAndServe(os.Getenv("LISTEN_ADDRESS"), nil))
 }

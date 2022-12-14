@@ -34,7 +34,7 @@ func StartLocate(ctx context.Context) error {
 			log.Println(err)
 			return err
 		}
-		if Locate(os.Getenv("STORAGE_ROOT") + "/objects/" + object) {
+		if Locate(os.Getenv("STORAGE_ROOT") + "/object/" + object) {
 			err := q.Send(msg.ReplyTo, os.Getenv("LISTEN_ADDRESS"))
 			if err != nil {
 				log.Println(err)
