@@ -14,7 +14,7 @@ import (
 
 func Locate(ctx context.Context, name string) (string, error) {
 	q := rabbitmq.New(ctx, os.Getenv("RABBITMQ_SERVER"))
-	err := q.Publish("daaServers", name)
+	err := q.Publish("dataServers", name)
 	if err != nil {
 		return "", err
 	}
